@@ -1,0 +1,13 @@
+                                  Vimpoint
+
+
+   · "Vimpoint" is a presentation system built entirely in Vim
+
+   · To use Vimpoint, you create a source file with a .vpt suffix
+
+   · Then compile it, creating a directory of slide files
+
+   · Then edit the slide files, which are syntax highlighted to form
+     a readable presentation
+
+   · Vimpoint can also produce handout files in HTML format
