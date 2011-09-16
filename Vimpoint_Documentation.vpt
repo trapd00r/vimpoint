@@ -1,0 +1,1314 @@
+!!!!! To view this file as a Vimpoint presentation, make sure the
+!!!!! various plugins and syntax files are installed and then type:
+!!!!!
+!!!!!      :Run
+!!!!!
+!!!!! while editing this file in Vim
+
+=title     The {{Vimpoint}}
+         Presentation System
+
+=presenter  Damian Conway
+=info       Thoughtstream
+
+=duration   60 minutes
+
+
+Vimpoint
+
+* "Vimpoint" is a presentation system built entirely in Vim
+
+* To use Vimpoint, you create a source file with a {{.vpt}} suffix
+
+* Then compile it, creating a directory of slide files
+
+* Then edit the slide files, which are syntax highlighted to form
+  a readable presentation
+
+* Vimpoint can also produce handout files in HTML format
+
+
+Vimpoint source files
+
+* A Vimpoint source file uses a simple text markup notation
+
+* With that notation, you can specify sections, headings, bullet
+  points, pauses and breaks in slides, intermissions in the
+  presentation, examples, hierarchical subpresentations,
+  and other navigational mechanisms
+
+=break
+
+* The marked-up source looks like this:
+
+    Headings always start on the left margin
+
+    * \**Bullet points\** normally start with asterisks
+      (like this line)
+
+    * Any line that begins with whitespace is (part of) an *\*example*\*:
+
+        for $indented (@lines) {
+            treat($indented, as => 'example');   \**# e.g. code blocks\**
+        }
+
+    =break
+
+* Which is converted to...
+
+
+Headings always start on the left margin
+
+* **Bullet points** normally start with asterisks
+  (like this line)
+
+* Any line that begins with whitespace is (part of) an **example**:
+
+     for $indented (@lines) {
+        treat($indented, as => 'example');     **# e.g. code blocks**
+     }
+
+=break
+
+* Any line beginning with an {{=}} is a **flow control directive**
+  (more on those shortly)
+
+* Within headings, points, and examples, there are a small number
+  of simple mark-up conventions (more on those shortly too)
+
+* If a heading contains an octothorpe ({{#}}), it is converted to a
+  heading number
+
+* ...specifically, to the ordinal number of the heading within the
+  current section (more about sections shortly)
+
+=break
+
+* Any line that starts with a plus sign ({{+}}) followed by a
+  whitespace character is **not** displayed during the presentation
+
+* However, such lines **are** added into any handouts
+  (hence the {{+}})
+
++ * Like this one is
++   (or isn't)
++ 
++       Note that you can prefix any valid Vimpoint source
++       with a '+', including directives, headings, and code blocks
+
+* The plus sign and whitespace character are removed before
+  the line is processed for the handout
+
+=break 
+
+* Any line may, alternatively, start with a minus sign ({{-}})
+  followed by a whitespace character 
+  
+* Such lines are included in the presentation
+  (with the leading minus-space removed)
+  
+* But they are deleted from any handouts
+  (as suggested by the {{-}})
+
+- * Like this one is
+-   (or isn't)
+- 
+-       Note that you can prefix any valid Vimpoint source
+-       with a '-', including directives, headings, and code blocks
+
+=break
+
+* {{+}} and {{-}} bullets can be used together to create a
+  presentation with concise bullet points, but detailed handouts:
+
+    Features of the language redesign
+
+    **- Cleaner, more concise syntax**
+
+    + The language has been redesigned to minimize unnecessary and
+      unfathomable syntax, and hence to minimize unnecessary typing.
+
+    **- More readable**
+
+    + The reduction of symbolic syntax, and the addition of carefully
+      chosen method names for most operations, also improves the
+      readability of the language.
+
+    **- Just as powerful**
+
+    + Despite this reduction in syntax, the new version of the
+      language retains the full power of earlier version.
+
+
+Directives
+
+* Directives control the flow and navigation of the presentation
+
+* Each is specified by an {{=}} in column 1
+
+
+The {{=section}} directive
+
+* This directive indicates a new section of the presentation
+
+* It expects a heading for the section after the directive
+
+* This heading can contain markup for code or emphasis
+
+* For example:
+
+    =section Background
+
+    =section The Current \{{Identifier\}} Problem
+
+    =section The \**Proposed\** Solution
+
+    =section Implementation (\#1)
+
+=break
+
+* In a presentation, section headings are displayed
+  on a special slide
+
+* In a handout, they are formatted specially
+
+* Like so:
+
+=section This A New Section
+
+The {{=section}} directive
+
+* If the section heading contains an octothorpe ({{#}}), it is
+  converted to the corresponding section number
+
+* If a literal octothorpe is required,
+  escape it with a backslash ({{\\#}})
+
+=break
+
+* For example, these:
+
+    =section #. Background
+
+    =section Section #: The Current {{Identifier}} Problem
+
+    =section (#) The Proposed Solution
+
+    =section Part # - Implementation (\#1)
+
+* ...produce the following section headings...
+
+=section 1. Background
+
+=section Section 2: The Current {{Identifier}} Problem
+
+=section (3) The Proposed Solution
+
+=section Part 4 - Implementation (\#1)
+
+
+The {{=pause}} directive
+
+* By default all bullet points are shown at once
+
+* Like these are
+
+* But a {{=pause}} directive causes the display of
+  subsequent points to be deferred until the next advance
+
+=pause
+
+* For example, there was a {{=pause}} before this point
+
+=pause
+
+* And before this one
+
+
+The {{=autopause}} directive
+
+* An {{=autopause}} causes Vimpoint to insert
+  a virtual {{=pause}}
+  
+* This pause is inserted into the blank line(s)
+  before every bullet point in the rest of the slide
+
+=autopause
+
+* For example, this slide has an {{=autopause}}
+  before this bullet point
+
+* So the remaining points all appear...
+
+* One...
+
+
+* ...at...
+
+
+
+* ...a time
+
+=break
+
+* If {{=autopause}} appears at the start of a presentation source file,
+  before the first slide title...
+  
+* ...then every slide is treated as having an implicit {{=autopause}}
+
+=break
+
+* Autopausing can be enabled at any point:
+
+    =autopause on
+    =autopause yes
+    =autopause enable
+    =autopause 1
+    =autopause
+
+* ...or disabled:
+
+    =autopause off
+    =autopause no
+    =autopause disable
+    =autopause 0
+
+
+The {{=autoslidepause}} directive
+
+* A useful signposting technique within presentations is to put 
+  a {{=pause}} before the content of each new slide
+
+* That way, the audience sees the new slide's title without any
+  associated content
+
+* This focuses their attention on the fact that
+  they're seeing a new slide
+
+* This provides them with a useful navigation cue
+
+=break
+
+* Vimpoint does this automatically, but you can disable it 
+  using the {{=autoslidepause}} directive:
+
+    =autoslidepause off
+    =autoslidepause no
+    =autoslidepause disable
+    =autoslidepause 0
+
+* To re-enable the feature for later slides:
+
+    =autoslidepause on
+    =autoslidepause yes
+    =autoslidepause enable
+    =autoslidepause 1
+    =autoslidepause
+
+=break
+
+* For example, if we use {{=autoslidepause off}}...
+
+=autoslidepause off
+
+
+The {{=autoslidepause}} defective
+
+* Then the next slide's content appears immediately
+
+* (Notice how much harder it is to detect that
+   this is a different slide?)
+
+* Then if we say {{=autoslidepause on}}...
+
+=autoslidepause on
+
+
+The {{=autoslidepause}} directive
+
+* Then once again the slide title appears separately,
+  before any content appears
+
+
+The {{=break}} directive
+
+* A {{=break}} directive clears the bullet points currently
+  being displayed
+
+* ...which causes subsequent bullet points to be displayed
+  from the top of the slide
+
+* This makes it easy to create the effect of multiple slides
+  with a single title
+
+=break
+
+* For example, there was a {{=break}} before this point
+
+=pause
+
+* So the title stays the same, but the points restart from the top
+
+=break
+
+* There was another {{=break}} before this point
+
+* Note that {{=break}} directives are ignored when rendering handouts
+
+* So you get a single title with all the points neatly under it
+
+
+The {{=animation}} directive
+
+* The {{=animation}} directive enables a simple type of
+  frame-based animation
+
+* It injects the equivalent of a {{=break}} into a slide,
+  but copies everything before the directive to the next slide
+
+=animation
+
+* For example.......
+
+         Work
+
+=animation
+
+* For example.......
+
+         Work---------> Earn
+
+=animation
+
+* For example.......
+
+         Work---------> Earn--------> Consume
+
+=animation
+
+* For example.......
+
+         Work---------> Earn--------> Consume...
+          ^....................................:
+
+=animation
+
+* For example.......
+
+         Work---------> Earn--------> Consume...
+          ^....................................:
+                            |
+                            |
+                            V
+                           DIE
+
+=break
+
+=animation keyframe
+
+* Animation frames are displayed in a handout only if
+  they are specified with the {{keyframe}} option:
+
+    =animation 
+
+    * This frame of the animation is not shown in the handout
+
+    =animation 
+
+    * This frame of the animation is not shown in the handout either
+
+    =animation keyframe
+
+    * This frame of the animation **is** shown in the handout
+
+
+The {{=example}} directive
+
+* The {{=example}} directive can be used to incorporate 
+  either an external example file, or an internal example text
+
+* If used with a filename or filepath argument:
+
+    =example demo.c
+
+    =example ~/demos/eg.pl
+
+* ...it incorporates the contents of that file
+  as the content to be shown on the next advance
+
+=break
+
+* Filenames that don't include a full path 
+  are searched for in the following locations:
+
+    1. The current directory
+    2. An **example/** or **examples/** subdirectory of the current directory
+    3. A **demo/** or **demos/** subdirectory of the current directory
+
+* For example:
+
+=example demo.c
+
+=example ~/.vimrc
+
+=example subdemo.txt
+
+=example subexample.txt
+
+=example non/existent/file.py
+
+* If the {{=example}} directive is specified without a file:
+
+    =example
+
+* ...then any (indented) text following it assumed
+  to be the example, specified inline
+
+=break
+
+* The first line of an inline example is used to determine
+  the left margin of the entire example:
+
+    =example
+
+        #! /bin/sh 
+
+        echo 'Hello, World!'
+
+            cat /usr/share/entire_planet.txt
+
+* Which would produce:
+
+=example
+
+    #! /bin/sh 
+
+    echo 'Hello, World!'
+
+        cat /usr/share/entire_planet.txt
+
+=break
+
+* In the presentation, both inline and external examples
+  are rendered using a distinct colour scheme
+
+* In handouts, examples are rendered in a fixed-width typeface,
+  with a surrounding border
+
+
+The {{=active}} directive
+
+* A variation on the {{=example}} directive,
+  the {{=active}} directive creates a live link to a file
+
+* Normally, example files are copied into the slide set
+
+* But if an example file is specified with {{=active}},
+  instead of copying the file, it is directly (soft-)linked
+
+=active test.dat
+
+=example
+
+    #! /usr/bin/perl -w
+    use strict;
+    use 5.010;
+
+    open my $fh, '>', 'test.dat' or die;
+
+    say {$fh} $_ for 1..10;
+
+=active test.dat
+
+
+The {{=target}} directive
+
+* This directive creates a **jump target**
+
+* While a presentation is running, hitting {{<TAB>}} will take you to
+  the next available jump target in the presentation sequence
+
+* Hitting {{<SHIFT-TAB>}} will list the available targets, one at a time.
+
+=break
+
+* You can tab through the targets of a {{<SHIFT-TAB>}} list
+  forwards using {{<TAB>}}, or backwards using {{<SHIFT-TAB>}}.
+
+* Hit {{<RETURN>}} to select the target you want.
+
+* Hitting anything else cancels the jump
+
+=break
+
+* The {{=target}} directive is typically used to mark the start of your
+  conclusion slide(s)
+  
+* This makes it easy to "fast forward" to them if time runs short:
+
+    Conclusions
+
+    =target Out of time
+
+    * Presentations need planning, preparation, delivery,
+      and interaction
+
+    * Every one of those takes longer than you will expect
+
+=break
+
+=target Back to end of target slide
+
+* The directive must have one or more non-whitespace characters
+  following it on the same line
+  
+* These characters document the purpose of the target
+
+* They also provide sensible names within the multiple-targets list
+
+
+The {{=link}} directive
+
+* A {{<TAB>}} or {{<SHIFT-TAB>}} normally allows you to jump
+  to **any** {{=target}} that is not on the current page
+
+* However, you can also limit the available jumps from a page
+  to a specified subset
+
+* This subset is specified using {{=link}} directives
+
+=break
+
+* {{=link}} directives are specified with a {{=target}} label:
+
+    =link Conclusion
+
+    =link Back to end of target slide
+
+=break
+
+* If a particular slide has exactly one {{=link}} directive,
+  a {{<TAB>}} jumps directly to that target
+  (rather than to the next target in sequence)
+
+* If a particular slide has one or more {{=link}} directives,
+  then a {{<TAB>}} acts like a {{<SHIFT-TAB>}},
+  allowing you to select which link to jump to
+
+* The typical use is to specify a single {{=link}} on a page
+  then use it to skip ahead (via a single {{<TAB>}}) if necessary
+
+* For example, this slide has a single {{=link}},
+  which will {{<TAB>}} it immediately to the conclusion
+  bypassing any intermediate targets
+
+=link Conclusion
+
+=target =link slide
+
+* However you can also specify more than one {{=link}} on a slide,
+  in which case {{<TAB>}} and {{<SHIFT-TAB>}} will cycle through them
+
+=break
+
+* Links are also useful for controlled fast-forwarding
+
+=break
+
+* For example:
+
+    The Nitty-Gritty
+
+    * At this point we can delve into the implementation details
+
+    * Or we can skip ahead to the juicy applications
+
+    **=link The Juicy Applications**
+
+
+    Implementing the Quantum/Relativistic Lunchbox
+
+    * First, a little quantum mechanics...
+
+* Now a {{<TAB>}} on the "Nitty-Gritty" slide will skip over
+  the nasty physics and straight to the "Juicy Applications" slide
+
+
+Nested presentations
+
+* The {{=link}} directive can also be used to create hierarchical
+  presentations
+
+* If the link target is the name or path of a Vimpoint
+  presentation directory (i.e. ends in {{.vpp}}):
+
+    =link Mathematical_Primer.vpp
+
+    =link Implementation_Details.vpp
+
+    =link A_Longer_Example.vpp
+
+* ...then you can {{<TAB>}} or {{<SHIFT-TAB>}} into one of those
+  presentations (which will be run in a separate window tab)
+
+* When you exit the nested presentation (by closing the window tab)
+  you are returned to the original slide
+
+=break
+
+* For example, this slide has the following link:
+
+    =link nested.vpp
+
+* ...so a {{<TAB>}} here drills you down into that presentation
+
+=link nested.vpp
+
+
+The {{=selector}} directive
+
+* You can also specify links that have a visual representation
+
+* This is most often used to show a list of sub-presentations
+  and select one or more
+
+* The {{=selector}} directive expects a link target, followed by some text
+
+* It converts the text to a bullet point and remaps the first character of the
+  text so that that character jumps to the corresponding link target
+
+=break
+
+* For example:
+
+    =selector Basic_Features.vpp           1. Basic features
+
+    =selector Data_Structures.vpp          2. Data structures
+
+    =selector Control_Structures.vpp       3. Control structures
+
+    =selector Error_Handling.vpp           4. Error handling
+
+    =selector Conclusion                   5. Conclusion
+
+=break
+
+* These directives create a series of links that can be activated
+  by pressing the keys {{1}} through {{5}}
+
+* When one of these keys is pressed, the corresponding link text is
+  highlighted
+
+* To confirm the jump you then press {{<ENTER>}}
+  (or {{<ESC>}} to cancel the selection)
+
+* For example:
+
+=break
+
+* (Try pressing one of the numbers, then {{<ENTER>}})
+
+=selector Basic_Features.vpp           1. Basic features
+
+=selector Data_Structures.vpp          2. Data structures
+
+=selector Control_Structures.vpp       3. Control structures
+
+=selector Error_Handling.vpp           4. Error handling
+
+=selector Conclusion                   5. Conclusion
+
+
+The {{=title}} directive
+
+* The {{=title}} directive specifies the title of the entire presentation
+
+* For example:
+
+    =title The Vimpoint Presentation System
+
+* The specified title is used for the autogenerated title slide
+
+* ...and for any {{=intermission}} slides
+
+=break
+
+* Titles can be specified on multiple lines:
+
+    =title      The Vimpoint
+             Presentation System
+
+* The specified information is displayed on
+  the autogenerated title slide
+
+* ...and in any {{=intermission}} slides
+
+
+The {{=presenter}} directive
+
+* The {{=presenter}} directive specifies the name of the presenter
+
+* The specified information is displayed on the autogenerated
+  title slide
+
+* ...and in any {{=intermission}} slides
+
+
+The {{=info}} directive
+
+* The {{=info}} directive specifies extra information
+  about the presentation
+
+* For example, the affiliation of the presenter:
+
+    =presenter Dr Damian Conway
+    =info       Thoughtstream 
+
+=break
+
+* Or a caveat regarding the presentation:
+
+    =title  How To Increase Your Income By 1000%
+
+    =info   Note: This presentation does not consititute
+                  financial or legal advice. Consult a 
+                  qualified financial advisor before
+                  trying any of the following suggestions.
+
+* The specified information is displayed immediately below the
+  presenter details on the autogenerated title slide
+
+
+The {{=duration}} directive
+
+* The {{=duration}} directive specifies how long the presentation is
+  scheduled to run:
+
+    =duration  60 seconds
+
+    =duration  30 minutes
+
+    =duration   1 hour
+
+* If you specify a duration without a unit, "minutes" are assumed:
+
+    =duration  45
+
+=break
+
+* If the presentation has a specified duration, Vimpoint will
+  display a progress meter at the bottom of the window
+
+* This meter consists of a solid line
+  (representing the entire length of the presentation)...
+
+* ...with a growing dashed line just above it
+  (representing what percentage of the presentation has been seen)...
+
+* ...plus a single dot somewhere on the line
+  (representing what percentage of the presentation
+   **should** have been seen by now)
+
+=pause
+
+* Like so: **______________________________.                            **
+
+=break
+
+* The dot represents the presenter's time goal
+
+* So the idea is to keep the end of the dashed line
+  "at or ahead" of the dot/goal:
+
+=animation keyframe
+
+                                 where we should be
+                                        |
+                                        V
+    Will finish early:   **_______________.____                       **
+
+=animation
+
+                                 where we should be
+                                        |
+                                        V
+    Will finish on time: **_______________.                           **
+
+=animation
+
+                                 where we should be
+                                        |
+                                        V
+    Need to talk faster: **____________   .                           **
+
+=break
+
+* The progress indicator is normally displayed using the
+  {{VimpointProgress}} highlight (dark blue, by default)
+
+* However, in the last two minutes of a presentation, it is displayed
+  using the {{VimpointProgressFinish}} highlight (red by default)
+
+* This is intended to serve as a warning that you need to finish up
+
+
+The {{=intermission}} directive
+
+* The {{=intermission}} directive inserts a slide that contains only the
+  title of the presentation 
+
+* (As specified by the presentation's {{=title}} directive)
+
+* ...or else just the word "Intermission"
+
+* This is useful for marking an intermission in a presentation
+
+=intermission
+
+* It's also handy to insert a "discussion gap" in
+  a series of demonstrations
+
+* If the directive is followed by a time specification:
+
+    =intermission 5 min
+
+    =intermission 60 sec
+
+    =intermission 1 hr
+
+* ...the intermission slide also includes a count-down timer
+  indicating how much of the intermission remains
+
+=intermission 10s
+
+* During a timed intermission, you can adjust the countdown
+  using the {{-}} and {{+}} keys
+
+* They add or subtract one minute to the current "time remaining"
+
+=intermission 10s
+
+* Pressing any other key during the intermission terminates
+  the countdown immediately and carries out the key's action
+
+* Typically then, to cancel the intermission, you just press
+  {{<DOWN>}} or {{<SPACE>}} to move on to the next slide
+
+
+Markup and rendering conventions
+
+* Titles are always auto-centred in the presentation,
+  and displayed in bold
+  
+* In the handouts, titles are also bold,
+  but are left-justified
+
+=break
+
+* The text of bullet points is set in a normal-weight text
+
+* Text can be emphasized (in titles, points, or code)
+  by **surrounding** it with double asterisks:
+  
+    * Text can be emphasized (in titles, points, or code)
+      by \**surrounding\** it with double asterisks:
+    
+* In the presentation, emphasized text is rendered **with underlining**
+
+* In the handout, it is rendered **in italics**
+
+=break
+
+* To specify a literal double asterisk (\**), escape it with a backslash:
+
+    * To specify a literal asterisk (\\\**), escape it with a backslash:
+
+* To specify a literal backslash (\\), escape it with another backslash
+
+    * To specify a literal backslash (\\\\), escape it with another backslash
+
+=break
+
+* Code can be inlined in points or titles by surrounding it
+  with double braces
+
+* For example, {{$this->inlined('code')}} is produced with:
+
+    * For example, {{$this->inlined('code')}} is produced with:
+
+* In the presentation such text is {{$rendered->in}} a distinct colour
+
+* In the handout, it is {{$rendered->in}} a fixed-width typeface
+
+=break
+
+* To produce literal double braces (\{{...\}}),
+  escape them with backslashes:
+
+    * To produce literal braces (\\{{...\\}}),
+      escape them with backslashes:
+
+=break
+
+* Text emphasis markers also work inside code markup (and vice versa):
+
+* You can emphasize {{**$inlined**->code()}} fragments like so:
+
+    * You can emphasize {{\**$inlined\**->code()}} fragments like so:
+
+* Or you can emphasize **{{$inlined}}**{{->code()}} fragments like so:
+
+    * You can emphasize both \**{{$inlined}}\**{{->code()}} fragments:
+
+=break 
+
+* Asterisks also emphasize within indented code blocks:
+
+    **if** ( size < rows \** 2 )
+        error_ref = okay;
+    **elseif**
+        error_ref = overflow;
+    **endif**
+
+=break
+
+* Note that this implies that literal double asterisks (e.g. for an
+  exponentiation operator) always have to be escaped anywhere
+  inside code:
+
+=animation
+
+    * The {{size}} must be less than {{rows \\\** 2}}:
+
+        \**if\** ( size < rows \\\** 2 )
+            error_ref = okay;
+        \**elseif\**
+            error_ref = overflow;
+        \**endif\**
+
+
+=animation keyframe
+
+    * The {{size}} must be less than {{rows **\\\*\*** 2}}:
+
+        \**if\** ( size < rows **\\\*\*** 2 )
+            error_ref = okay;
+        \**elseif\**
+            error_ref = overflow;
+        \**endif\**
+
+
+Comments
+
+* Any line with a {{!}} in the first column is a comment
+
+* Comments are ignored by the presentation compiler
+  and do not appear in any generated handouts either
+
+! So you'll only see these lines if you're reading this in the
+! original .vpt source document
+
+
+Generating a presentation
+
+* A Vimpoint presentation is specified in a presentation source file,
+  which must have a {{.vpt}} file extension:
+
+    **> ls**
+
+    intro_to_vimpoint.vpt
+
+=break
+
+* While editing that file, you can issue a command to "compile" the
+  presentation:
+
+    :Compile<CR>
+
+* This produces a "presentation directory" with the same name,
+  but with a {{.vpp}} file extension
+
+    **> ls**
+
+    intro_to_vimpoint.vpt
+    intro_to_vimpoint.vpp/
+
+=break
+
+* Within that directory are a series of {{.vpa}}, {{.vpe}},
+  and other similarly suffixed files,
+
+* Each of which represents a single **a**dvance
+  (or an **e**xample, etc.) within the presentation:
+
+=break
+
+    **> ls intro_to_vimpoint.vpp**
+
+    000001.Headings_start_on_left_margin.vpa
+    000002.Directives.vpa
+    000003.The_pause_directive.vpa
+    000004.The_pause_directive.vpa
+    000005.The_pause_directive.vpa
+    000006.The_autopause_directive.vpa
+    000007.The_autopause_directive.vpa
+    000008.The_autopause_directive.vpa
+    000009.The_autopause_directive.vpa
+    000011.The_autopause_directive.vpa
+    000012.The_break_directive.vpa
+    000013.The_break_directive.vpa
+    000016.The_demo_directive.vpa
+    000017.demo.pl
+    000018.Markup_and_rendering_conventions.vpa
+    000019.Markup_and_rendering_conventions.vpa
+    000023.Markup_and_rendering_conventions.vpa
+    000024.Generating_presentations.vpa
+
+
+Starting a presentation
+
+* To deliver a presentation, simply edit the first file
+  (or all the files) in the presentation directory:
+
+    **> vim intro_to_vimpoint.vpp/\***
+
+=break 
+
+* Or, from within the original {{.vpt}} source file, use the command:
+
+    :Run
+
+* Or just hit {{<TAB>}}, which is mapped to {{:Run}} in normal mode
+
+* If you {{:Run}}, a {{:Compile}} command will be performed automatically
+  before the presentation is run
+
+=break
+
+* When calling {{:Run}}, you can also override the specified {{=duration}}
+  of a presentation (in minutes)
+
+* You do that by calling {{:Run}} with a prefixed number:
+
+    :45Run
+
+    :90Run
+
+    :10Run
+
+* ...or, equivalently, by prefixing the number to a normal-mode
+  {{<TAB>}} command:
+
+    45<TAB>
+
+    90<TAB>
+
+    10<TAB>
+
+* This resets the duration (for this run only) to the specified number 
+  of minutes
+
+
+Delivering a presentation
+
+* While the presentation is running, you can use the following
+  key mappings:
+
+=animation keyframe
+
+    <SPACE> or <DOWN>   Go forward one advance
+
+           <UP>         Go back one advance
+
+         <RIGHT>        Go to next slide with a different title
+
+         <LEFT>         Go to previous slide with a different title
+
+        <CTRL-E>        **E**dit a copy of the current slide using
+                        standard Vim configuration (as per .vimrc)
+                        (Exit the editor to return to the presentation)
+
+        <CTRL-T>        Edit an empty **t**emporary file using standard
+                        Vim configuration (as per .vimrc)
+                        (Exit the editor to return to the presentation)
+
+=animation keyframe
+
+        <CTRL-P>        **P**ause the presentation by inserting an
+                        ad hoc intermission (if you prefix a number **N** 
+                        the intermission will be timed to **N** minutes)
+
+          <TAB>         Go to the next jump target or link
+
+       <SHIFT-TAB>      Select from available jump targets or links
+
+* All other key mappings remain as usual (i.e. as per your {{.vimrc}})
+
+* Except that the {{ZZ}} mapping is modified so that it prompts with "???"
+  and requires an extra {{Z}} to actually quit
+
+* This prevents accidentally quitting the presentation prematurely
+
+=break
+
+* Within a presentation slide, you can also issue the command:
+
+    :Specification
+
+* ...which will immediately take you to the corresponding point in
+  the original {{.vpt}} specification for the slide
+
+* (Depending on what other plugins you are using, it will probably be
+   sufficient to type {{:Sp}} or {{:Sp<TAB>}})
+
+* If you have used {{:Specification}} to return to a {{.vpt}} slide, 
+  you can then issue a:
+
+    :Resume
+
+=break
+  
+* This will recompile the presentation and return you to
+  the slide from which you {{:Specification}}'d
+
+* Within a {{.vpt}} file {{:Resume}} is also mapped to {{<SHIFT-TAB>}}
+
+* This {{:Specification}}/{{:Resume}} sequence is particularly useful
+  for making corrections when previewing a Vimpoint presentation
+
+
+Folding support in Vimpoint source files
+
+* The Vimpoint system includes rules that help Vim fold {{.vpt}} files 
+  correctly
+
+* Type {{zm}} and {{zr}} in a {{.vpt}} file to see the effect
+
+
+Generating handouts
+
+* When in a {{.vpt}} file, type:
+
+    :Handout
+
+* An HTML file of the presentation (neatly formatted as text)
+  is then generated
+
+* If the file was {{example.vpt}}, you get {{example.html}} 
+
+
+User-definable colour schemes
+
+* The colour scheme used by Vimpoint is specified by a series of Vim
+  {{highlight}} groups
+
+* You can change the colour scheme by rewriting these groups
+  in the corresponding {{vimptvp*}} file
+
+=break
+
+* For source ({{.vpt}}) files the colour scheme is
+  defined in the {{vimptvpt.vim}} syntax file:
+
+    VPTTitle                      Any slide title
+
+    VPTBulletPoint                * Ordinary bullet points
+    VPTBulletPoint_SlidesOnly     - Slide-only bullet points
+    VPTBulletPoint_NotesOnly      + Notes-only bullet points
+
+    VPTCodeBlock                  An indented code block
+
+    VPTCode                       {{Inlined code}}
+    VPTCodeDelim                  The {{ and }} of inlined code
+    VPTEmph                       \**Emphasized text\**
+    VPTEmphDelim                  The \** of emphasized text
+    VPTEscape                     The \\ of an escaped character
+
+    VPTDirective                  =directives
+    VPTDirectiveText              The text associated with a directive
+    VPTBadDirective               =looks_like_a_directive_but_isn't
+
+    VPTComment                    # A Vimpoint comment line
+
+    VPTEdgeScreen                 Text that will be close to the right margin
+    VPTOffScreen                  Text that will be past the right margin
+
+=break
+
+* For normal slides (defined in the {{vimptvpa.vim}} syntax file):
+
+    VPABackground         The background of each slide
+    VPALine               The ruled line between title and bullet points
+
+    VPATitle              The title of the slide
+    VPATitleCode          Any {{inline code}} in the slide title
+    VPATitleEmph          Any \**emphasized text\** in the slide title
+    VPATitleCodeEmph      Any {{\**emphasized code\**}} in the slide title
+
+    VPABulletPoint        Regular bullet points
+    VPACode               Any {{inline code}} in a bullet point
+    VPAEmph               Any \**emphasized text\** in a bullet point
+    VPACodeEmph           Any {{\**emphasized code\**}} in a bullet point
+
+    VPACodeBlock          Indented code blocks
+    VPACodeBlockEmph      Any \**emphasized code\** in a code block
+
+    VPATimerDisplay       The timer graphic (if =duration specified)
+    VPATimerDisplayEnd    The timer graphic in the final two minutes
+
+=break
+
+* For title slides (defined in the {{vimptvpf.vim}} syntax file):
+
+    VPFBackground         The background of each slide
+    VPFLine               The ruled line between title and name
+       
+    VPFTitle              The title of the presentation
+    VPFTitleCode          Any {{inline code}} in the title
+    VPFTitleEmph          Any \**emphasized text\** in the title
+    VPFTitleCodeEmph      Any {{\**emphasized code\**}} in the title
+
+    VPFName               The presenter's name
+    VPFNameCode           Any {{inline code}} in the name          
+    VPFNameEmph           Any \**emphasized text\** in the name    
+    VPFNameCodeEmph       Any {{\**emphasized code\**}} in the name
+
+    VPFInfo               The extra information
+    VPFInfoCode           Any {{inline code}} in the information           
+    VPFInfoEmph           Any \**emphasized text\** in the information     
+    VPFInfoCodeEmph       Any {{\**emphasized code\**}} in the information 
+
+
+=break
+
+* For intermission slides (defined in the {{vimptvpi.vim}} syntax file):
+
+    VPIBackground         The background of the intermission
+    VPILine               The ruled line between title and name
+       
+    VPITitle              The title of the presentation
+    VPIName               The presenter's name
+
+* Note that, in intermission slides, the title and name are shown
+  without any formatting markup
+
+
+=break
+
+* For example slides (defined in the {{vimptvpe.vim}} syntax file):
+
+    VPEText               The entire text of the example
+
+
+Conclusion
+
+=target Conclusion
+
+=autopause
+
+* Vimpoint makes presentations, especially of code, easier to write
+
+* Give it a try
+
+
+Thank-you

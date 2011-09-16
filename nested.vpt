@@ -1,0 +1,21 @@
+=title Nesting Vimpoint Presentations
+
+
+This is a nested presentation
+
+* It can have multiple slides
+
+* And all the usual **Vimpoint** features
+
+It's just another presentation
+
+* You create it in the usual way
+
+* And run it in the usual way
+
+But if it was called
+as a nested presentation
+
+* When it's done...
+
+* You are returned to the originating slide
