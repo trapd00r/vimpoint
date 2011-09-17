@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =duration directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · The progress indicator is normally displayed using the                
+     VimpointProgress highlight (dark blue, by default)                     
+                                                                            
+   · However, in the last two minutes of a presentation, it is displayed   
+     using the VimpointProgressFinish highlight (red by default)            
+                                                                            
+   · This is intended to serve as a warning that you need to finish up     
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

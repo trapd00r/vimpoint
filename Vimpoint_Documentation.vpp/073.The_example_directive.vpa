@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =example directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · The first line of an inline example is used to determine              
+     the left margin of the entire example:                                 
+                                                                            
+       =example                                                             
+                                                                            
+           #! /bin/sh                                                       
+                                                                            
+           echo 'Hello, World!'                                             
+                                                                            
+               cat /usr/share/entire_planet.txt                             
+                                                                            
+   · Which would produce:                                                  
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

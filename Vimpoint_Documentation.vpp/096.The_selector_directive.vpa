@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =selector directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · You can also specify links that have a visual representation          
+                                                                            
+   · This is most often used to show a list of sub-presentations           
+     and select one or more                                                 
+                                                                            
+   · The =selector directive expects a link target, followed by some text    
+                                                                            
+   · It converts the text to a bullet point and remaps the first character of the
+     text so that that character jumps to the corresponding link target     
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                         Delivering a presentation                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · Within a presentation slide, you can also issue the command:          
+                                                                            
+       :Specification                                                       
+                                                                            
+   · ...which will immediately take you to the corresponding point in      
+     the original .vpt specification for the slide                          
+                                                                            
+   · (Depending on what other plugins you are using, it will probably be   
+      sufficient to type :Sp or :Sp<TAB>)                                   
+                                                                            
+   · If you have used :Specification to return to a .vpt slide,            
+     you can then issue a:                                                  
+                                                                            
+       :Resume                                                              
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

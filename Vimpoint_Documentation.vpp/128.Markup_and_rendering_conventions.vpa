@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                      Markup and rendering conventions                      
+                                                                                                                                                        
+                                                                                                                                                        
+   · Code can be inlined in points or titles by surrounding it             
+     with double braces                                                     
+                                                                            
+   · For example, $this->inlined('code') is produced with:                 
+                                                                            
+       * For example, {{$this->inlined('code')}} is produced with:          
+                                                                            
+   · In the presentation such text is $rendered->in a distinct colour      
+                                                                            
+   · In the handout, it is $rendered->in a fixed-width typeface            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

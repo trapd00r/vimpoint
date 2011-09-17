@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                       User-definable colour schemes                        
+                                                                                                                                                        
+                                                                                                                                                        
+   · For intermission slides (defined in the vimptvpi.vim syntax file):    
+                                                                            
+       VPIBackground         The background of the intermission             
+       VPILine               The ruled line between title and name          
+                                                                            
+       VPITitle              The title of the presentation                  
+       VPIName               The presenter's name                           
+                                                                            
+   · Note that, in intermission slides, the title and name are shown       
+     without any formatting markup                                          
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

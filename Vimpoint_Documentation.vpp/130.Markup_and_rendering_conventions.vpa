@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                      Markup and rendering conventions                      
+                                                                                                                                                        
+                                                                                                                                                        
+   · Text emphasis markers also work inside code markup (and vice versa):  
+                                                                            
+   · You can emphasize $inlined->code() fragments like so:                 
+                                                                            
+       * You can emphasize {{**$inlined**->code()}} fragments like so:      
+                                                                            
+   · Or you can emphasize $inlined->code() fragments like so:              
+                                                                            
+       * You can emphasize both **{{$inlined}}**{{->code()}} fragments:     
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

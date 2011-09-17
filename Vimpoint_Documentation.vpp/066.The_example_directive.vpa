@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =example directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · Filenames that don't include a full path                              
+     are searched for in the following locations:                           
+                                                                            
+       1. The current directory                                             
+       2. An example/ or examples/ subdirectory of the current directory        
+       3. A demo/ or demos/ subdirectory of the current directory           
+                                                                            
+   · For example:                                                          
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

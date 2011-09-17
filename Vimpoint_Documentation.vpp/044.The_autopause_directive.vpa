@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =autopause directive                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · Autopausing can be enabled at any point:                              
+                                                                            
+       =autopause on                                                        
+       =autopause yes                                                       
+       =autopause enable                                                    
+       =autopause 1                                                         
+       =autopause                                                           
+                                                                            
+   · ...or disabled:                                                       
+                                                                            
+       =autopause off                                                       
+       =autopause no                                                        
+       =autopause disable                                                   
+       =autopause 0                                                         
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

@@ -1,0 +1,6 @@
+#! /bin/sh 
+
+echo 'Hello, World!'
+
+    cat /usr/share/entire_planet.txt
+

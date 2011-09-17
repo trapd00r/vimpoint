@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                         Delivering a presentation                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · While the presentation is running, you can use the following          
+     key mappings:                                                          
+                                                                            
+       <SPACE> or <DOWN>   Go forward one advance                           
+                                                                            
+              <UP>         Go back one advance                              
+                                                                            
+            <RIGHT>        Go to next slide with a different title          
+                                                                            
+            <LEFT>         Go to previous slide with a different title      
+                                                                            
+           <CTRL-E>        Edit a copy of the current slide using           
+                           standard Vim configuration (as per .vimrc)       
+                           (Exit the editor to return to the presentation)  
+                                                                            
+           <CTRL-T>        Edit an empty temporary file using standard      
+                           Vim configuration (as per .vimrc)                
+                           (Exit the editor to return to the presentation)  
+                                                                            
+                                                                                                                                                        

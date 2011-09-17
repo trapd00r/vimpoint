@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =animation directive                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · Animation frames are displayed in a handout only if                   
+     they are specified with the keyframe option:                           
+                                                                            
+       =animation                                                           
+                                                                            
+       * This frame of the animation is not shown in the handout            
+                                                                            
+       =animation                                                           
+                                                                            
+       * This frame of the animation is not shown in the handout either     
+                                                                            
+       =animation keyframe                                                  
+                                                                            
+       * This frame of the animation is shown in the handout                
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

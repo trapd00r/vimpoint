@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                            Nested presentations                            
+                                                                                                                                                        
+                                                                                                                                                        
+   · The =link directive can also be used to create hierarchical           
+     presentations                                                          
+                                                                            
+   · If the link target is the name or path of a Vimpoint                  
+     presentation directory (i.e. ends in .vpp):                            
+                                                                            
+       =link Mathematical_Primer.vpp                                        
+                                                                            
+       =link Implementation_Details.vpp                                     
+                                                                            
+       =link A_Longer_Example.vpp                                           
+                                                                            
+   · ...then you can <TAB> or <SHIFT-TAB> into one of those                
+     presentations (which will be run in a separate window tab)             
+                                                                            
+   · When you exit the nested presentation (by closing the window tab)     
+     you are returned to the original slide                                 
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        

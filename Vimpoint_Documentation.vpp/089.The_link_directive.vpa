@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                            The =link directive                             
+                                                                                                                                                        
+                                                                                                                                                        
+   · If a particular slide has exactly one =link directive,                
+     a <TAB> jumps directly to that target                                  
+     (rather than to the next target in sequence)                           
+                                                                            
+   · If a particular slide has one or more =link directives,               
+     then a <TAB> acts like a <SHIFT-TAB>,                                  
+     allowing you to select which link to jump to                           
+                                                                            
+   · The typical use is to specify a single =link on a page                
+     then use it to skip ahead (via a single <TAB>) if necessary            
+                                                                            
+   · For example, this slide has a single =link,                           
+     which will <TAB> it immediately to the conclusion                      
+     bypassing any intermediate targets                                     
+                                                                            
+   · However you can also specify more than one =link on a slide,          
+     in which case <TAB> and <SHIFT-TAB> will cycle through them            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        

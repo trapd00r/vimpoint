@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =autopause directive                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · An =autopause causes Vimpoint to insert                               
+     a virtual =pause                                                       
+                                                                            
+   · This pause is inserted into the blank line(s)                         
+     before every bullet point in the rest of the slide                     
+                                                                            
+   · For example, this slide has an =autopause                             
+     before this bullet point                                               
+                                                                            
+   · So the remaining points all appear...                                 
+                                                                            
+   · One...                                                                
+                                                                            
+                                                                            
+   · ...at...                                                              
+                                                                            
+                                                                            
+                                                                            
+   · ...a time                                                             
+                                                                            

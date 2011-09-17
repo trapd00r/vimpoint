@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =active directive                            
+                                                                                                                                                        
+                                                                                                                                                        
+   · A variation on the =example directive,                                
+     the =active directive creates a live link to a file                    
+                                                                            
+   · Normally, example files are copied into the slide set                 
+                                                                            
+   · But if an example file is specified with =active,                     
+     instead of copying the file, it is directly (soft-)linked              
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

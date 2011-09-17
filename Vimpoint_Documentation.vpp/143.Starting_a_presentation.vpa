@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          Starting a presentation                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · Or, from within the original .vpt source file, use the command:       
+                                                                            
+       :Run                                                                 
+                                                                            
+   · Or just hit <TAB>, which is mapped to :Run in normal mode             
+                                                                            
+   · If you :Run, a :Compile command will be performed automatically        
+     before the presentation is run                                         
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =section directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · For example, these:                                                   
+                                                                            
+       =section #. Background                                               
+                                                                            
+       =section Section #: The Current {{Identifier}} Problem               
+                                                                            
+       =section (#) The Proposed Solution                                   
+                                                                            
+       =section Part # - Implementation (\#1)                               
+                                                                            
+   · ...produce the following section headings...                          
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

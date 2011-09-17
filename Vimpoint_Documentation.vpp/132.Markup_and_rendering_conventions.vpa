@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                      Markup and rendering conventions                      
+                                                                                                                                                        
+                                                                                                                                                        
+   · Note that this implies that literal double asterisks (e.g. for an     
+     exponentiation operator) always have to be escaped anywhere            
+     inside code:                                                           
+                                                                            
+       * The {{size}} must be less than {{rows \** 2}}:                     
+                                                                            
+           **if** ( size < rows \** 2 )                                     
+               error_ref = okay;                                            
+           **elseif**                                                       
+               error_ref = overflow;                                        
+           **endif**                                                        
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

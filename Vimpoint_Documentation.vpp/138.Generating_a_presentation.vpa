@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                         Generating a presentation                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · While editing that file, you can issue a command to "compile" the     
+     presentation:                                                          
+                                                                            
+       :Compile<CR>                                                         
+                                                                            
+   · This produces a "presentation directory" with the same name,          
+     but with a .vpp file extension                                         
+                                                                            
+       > ls                                                                 
+                                                                            
+       intro_to_vimpoint.vpt                                                
+       intro_to_vimpoint.vpp/                                               
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

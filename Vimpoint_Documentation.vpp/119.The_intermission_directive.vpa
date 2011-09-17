@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                        The =intermission directive                         
+                                                                                                                                                        
+                                                                                                                                                        
+   · It's also handy to insert a "discussion gap" in                       
+     a series of demonstrations                                             
+                                                                            
+   · If the directive is followed by a time specification:                 
+                                                                            
+       =intermission 5 min                                                  
+                                                                            
+       =intermission 60 sec                                                 
+                                                                            
+       =intermission 1 hr                                                   
+                                                                            
+   · ...the intermission slide also includes a count-down timer            
+     indicating how much of the intermission remains                        
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

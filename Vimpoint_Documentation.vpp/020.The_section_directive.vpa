@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =section directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · If the section heading contains an octothorpe (#), it is              
+     converted to the corresponding section number                          
+                                                                            
+   · If a literal octothorpe is required,                                  
+     escape it with a backslash (\#)                                        
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

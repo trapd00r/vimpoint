@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          Starting a presentation                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · When calling :Run, you can also override the specified =duration        
+     of a presentation (in minutes)                                         
+                                                                            
+   · You do that by calling :Run with a prefixed number:                   
+                                                                            
+       :45Run                                                               
+                                                                            
+       :90Run                                                               
+                                                                            
+       :10Run                                                               
+                                                                            
+   · ...or, equivalently, by prefixing the number to a normal-mode         
+     <TAB> command:                                                         
+                                                                            
+       45<TAB>                                                              
+                                                                            
+       90<TAB>                                                              
+                                                                            
+       10<TAB>                                                              
+                                                                            

@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =duration directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · The =duration directive specifies how long the presentation is        
+     scheduled to run:                                                      
+                                                                            
+       =duration  60 seconds                                                
+                                                                            
+       =duration  30 minutes                                                
+                                                                            
+       =duration   1 hour                                                   
+                                                                            
+   · If you specify a duration without a unit, "minutes" are assumed:      
+                                                                            
+       =duration  45                                                        
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

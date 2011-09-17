@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                         Delivering a presentation                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · While the presentation is running, you can use the following          
+     key mappings:                                                          
+                                                                            
+           <CTRL-P>        Pause the presentation by inserting an           
+                           ad hoc intermission (if you prefix a number N     
+                           the intermission will be timed to N minutes)     
+                                                                            
+             <TAB>         Go to the next jump target or link               
+                                                                            
+          <SHIFT-TAB>      Select from available jump targets or links      
+                                                                            
+   · All other key mappings remain as usual (i.e. as per your .vimrc)      
+                                                                            
+   · Except that the ZZ mapping is modified so that it prompts with "???"    
+     and requires an extra Z to actually quit                               
+                                                                            
+   · This prevents accidentally quitting the presentation prematurely      
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        

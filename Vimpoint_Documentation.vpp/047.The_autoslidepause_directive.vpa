@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                       The =autoslidepause directive                        
+                                                                                                                                                        
+                                                                                                                                                        
+   · Vimpoint does this automatically, but you can disable it              
+     using the =autoslidepause directive:                                   
+                                                                            
+       =autoslidepause off                                                  
+       =autoslidepause no                                                   
+       =autoslidepause disable                                              
+       =autoslidepause 0                                                    
+                                                                            
+   · To re-enable the feature for later slides:                            
+                                                                            
+       =autoslidepause on                                                   
+       =autoslidepause yes                                                  
+       =autoslidepause enable                                               
+       =autoslidepause 1                                                    
+       =autoslidepause                                                      
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

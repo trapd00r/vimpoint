@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                       User-definable colour schemes                        
+                                                                                                                                                        
+                                                                                                                                                        
+   · For title slides (defined in the vimptvpf.vim syntax file):           
+                                                                            
+       VPFBackground         The background of each slide                   
+       VPFLine               The ruled line between title and name          
+                                                                            
+       VPFTitle              The title of the presentation                  
+       VPFTitleCode          Any {{inline code}} in the title               
+       VPFTitleEmph          Any **emphasized text** in the title           
+       VPFTitleCodeEmph      Any {{**emphasized code**}} in the title       
+                                                                            
+       VPFName               The presenter's name                           
+       VPFNameCode           Any {{inline code}} in the name                
+       VPFNameEmph           Any **emphasized text** in the name            
+       VPFNameCodeEmph       Any {{**emphasized code**}} in the name        
+                                                                            
+       VPFInfo               The extra information                          
+       VPFInfoCode           Any {{inline code}} in the information           
+       VPFInfoEmph           Any **emphasized text** in the information       
+       VPFInfoCodeEmph       Any {{**emphasized code**}} in the information   
+                                                                            

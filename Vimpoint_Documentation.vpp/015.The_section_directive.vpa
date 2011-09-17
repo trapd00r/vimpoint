@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =section directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · This directive indicates a new section of the presentation            
+                                                                            
+   · It expects a heading for the section after the directive              
+                                                                            
+   · This heading can contain markup for code or emphasis                  
+                                                                            
+   · For example:                                                          
+                                                                            
+       =section Background                                                  
+                                                                            
+       =section The Current {{Identifier}} Problem                          
+                                                                            
+       =section The **Proposed** Solution                                   
+                                                                            
+       =section Implementation (\#1)                                        
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

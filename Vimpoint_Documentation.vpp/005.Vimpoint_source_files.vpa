@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           Vimpoint source files                            
+                                                                                                                                                        
+                                                                                                                                                        
+   · The marked-up source looks like this:                                 
+                                                                            
+       Headings always start on the left margin                             
+                                                                            
+       * **Bullet points** normally start with asterisks                    
+         (like this line)                                                   
+                                                                            
+       * Any line that begins with whitespace is (part of) an **example**:  
+                                                                            
+           for $indented (@lines) {                                         
+               treat($indented, as => 'example');   **# e.g. code blocks**  
+           }                                                                
+                                                                            
+       =break                                                               
+                                                                            
+   · Which is converted to...                                              
+                                                                            
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        

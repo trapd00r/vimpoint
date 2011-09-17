@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =animation directive                          
+                                                                                                                                                        
+                                                                                                                                                        
+   · The =animation directive enables a simple type of                     
+     frame-based animation                                                  
+                                                                            
+   · It injects the equivalent of a =break into a slide,                   
+     but copies everything before the directive to the next slide           
+                                                                            
+   · For example.......                                                    
+                                                                            
+            Work---------> Earn--------> Consume...                         
+             ^....................................:                         
+                               |                                            
+                               |                                            
+                               V                                            
+                              DIE                                           
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

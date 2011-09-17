@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                  Headings always start on the left margin                  
+                                                                                                                                                        
+                                                                                                                                                        
+   · Any line may, alternatively, start with a minus sign (-)              
+     followed by a whitespace character                                     
+                                                                            
+   · Such lines are included in the presentation                           
+     (with the leading minus-space removed)                                 
+                                                                            
+   · But they are deleted from any handouts                                
+     (as suggested by the -)                                                
+                                                                            
+   · Like this one is                                                      
+     (or isn't)                                                             
+                                                                            
+         Note that you can prefix any valid Vimpoint source                 
+         with a '-', including directives, headings, and code blocks        
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

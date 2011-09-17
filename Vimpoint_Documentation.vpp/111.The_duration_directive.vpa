@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                          The =duration directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · If the presentation has a specified duration, Vimpoint will           
+     display a progress meter at the bottom of the window                   
+                                                                            
+   · This meter consists of a solid line                                   
+     (representing the entire length of the presentation)...                
+                                                                            
+   · ...with a growing dashed line just above it                           
+     (representing what percentage of the presentation has been seen)...    
+                                                                            
+   · ...plus a single dot somewhere on the line                            
+     (representing what percentage of the presentation                      
+      should have been seen by now)                                         
+                                                                            
+   · Like so: ______________________________.                                
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

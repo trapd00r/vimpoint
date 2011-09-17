@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                           The =example directive                           
+                                                                                                                                                        
+                                                                                                                                                        
+   · The =example directive can be used to incorporate                     
+     either an external example file, or an internal example text           
+                                                                            
+   · If used with a filename or filepath argument:                         
+                                                                            
+       =example demo.c                                                      
+                                                                            
+       =example ~/demos/eg.pl                                               
+                                                                            
+   · ...it incorporates the contents of that file                          
+     as the content to be shown on the next advance                         
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

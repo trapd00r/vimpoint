@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                       User-definable colour schemes                        
+                                                                                                                                                        
+                                                                                                                                                        
+   · For source (.vpt) files the colour scheme is                          
+     defined in the vimptvpt.vim syntax file:                               
+                                                                            
+       VPTTitle                      Any slide title                        
+                                                                            
+       VPTBulletPoint                * Ordinary bullet points               
+       VPTBulletPoint_SlidesOnly     - Slide-only bullet points             
+       VPTBulletPoint_NotesOnly      + Notes-only bullet points             
+                                                                            
+       VPTCodeBlock                  An indented code block                 
+                                                                            
+       VPTCode                       {{Inlined code}}                       
+       VPTCodeDelim                  The {{ and }} of inlined code          
+       VPTEmph                       **Emphasized text**                    
+       VPTEmphDelim                  The ** of emphasized text              
+       VPTEscape                     The \ of an escaped character          
+                                                                            
+       VPTDirective                  =directives                            
+       VPTDirectiveText              The text associated with a directive   
+       VPTBadDirective               =looks_like_a_directive_but_isn't      

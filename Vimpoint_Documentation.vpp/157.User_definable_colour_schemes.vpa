@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                       User-definable colour schemes                        
+                                                                                                                                                        
+                                                                                                                                                        
+   · For normal slides (defined in the vimptvpa.vim syntax file):          
+                                                                            
+       VPABackground         The background of each slide                   
+       VPALine               The ruled line between title and bullet points 
+                                                                            
+       VPATitle              The title of the slide                         
+       VPATitleCode          Any {{inline code}} in the slide title         
+       VPATitleEmph          Any **emphasized text** in the slide title     
+       VPATitleCodeEmph      Any {{**emphasized code**}} in the slide title  
+                                                                            
+       VPABulletPoint        Regular bullet points                          
+       VPACode               Any {{inline code}} in a bullet point          
+       VPAEmph               Any **emphasized text** in a bullet point      
+       VPACodeEmph           Any {{**emphasized code**}} in a bullet point  
+                                                                            
+       VPACodeBlock          Indented code blocks                           
+       VPACodeBlockEmph      Any **emphasized code** in a code block        
+                                                                            
+       VPATimerDisplay       The timer graphic (if =duration specified)     
+       VPATimerDisplayEnd    The timer graphic in the final two minutes     

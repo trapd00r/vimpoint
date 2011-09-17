@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                  Headings always start on the left margin                  
+                                                                                                                                                        
+                                                                                                                                                        
+   · Any line beginning with an = is a flow control directive              
+     (more on those shortly)                                                
+                                                                            
+   · Within headings, points, and examples, there are a small number       
+     of simple mark-up conventions (more on those shortly too)              
+                                                                            
+   · If a heading contains an octothorpe (#), it is converted to a         
+     heading number                                                         
+                                                                            
+   · ...specifically, to the ordinal number of the heading within the      
+     current section (more about sections shortly)                          
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        

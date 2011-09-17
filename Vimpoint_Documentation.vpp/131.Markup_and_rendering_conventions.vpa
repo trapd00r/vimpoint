@@ -1,0 +1,24 @@
+                                                                                                                                                        
+                      Markup and rendering conventions                      
+                                                                                                                                                        
+                                                                                                                                                        
+   · Asterisks also emphasize within indented code blocks:                 
+                                                                            
+       if ( size < rows ** 2 )                                              
+           error_ref = okay;                                                
+       elseif                                                               
+           error_ref = overflow;                                            
+       endif                                                                
+                                                                            
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
+                                                                                                                                                        
