@@ -15,6 +15,7 @@ endif
 syntax case ignore
 syntax sync fromstart
 set nowrap
+set nolist
 
 
 highlight   VPTBulletPoint       ctermfg=yellow   cterm=bold

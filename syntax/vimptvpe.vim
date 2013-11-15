@@ -13,6 +13,8 @@ endif
 
 syntax case ignore
 
+set nolist
+
 highlight   VPEText     ctermfg=white      ctermbg=black 
 
 syn match  VPEText  /./

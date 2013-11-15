@@ -15,7 +15,7 @@ endif
 syntax case ignore
 syntax sync fromstart
 set nowrap
-
+set nolist
 
 highlight   VPFBackground     ctermfg=white      ctermbg=white 
 
