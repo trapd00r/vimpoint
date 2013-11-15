@@ -15,6 +15,7 @@ syntax case ignore
 syntax sync fromstart
 set nowrap
 
+set nolist
 
 highlight   VPAInverse       ctermfg=white      ctermbg=black
 highlight   VPABackground    ctermfg=white      ctermbg=white
